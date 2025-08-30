@@ -1,0 +1,97 @@
+rooms:
+  entrance_hall:
+    name: "Entrance Hall"
+    description: >
+      You are standing in a grand stone hall. A heavy wooden door leads outside.
+      To the north, a staircase climbs into darkness. A wide archway opens east into a dining room.
+    exits:
+      north: great_hall
+      east: dining_room
+      outside: world_exit
+
+  library:
+    name: "Library"
+    description: >
+      Dusty shelves sag under the weight of ancient books. A ladder leans precariously against the highest shelf.
+      A secret draft seems to come from behind a row of books.
+    exits:
+      south: study
+      secret: hidden_tunnel
+
+  great_hall:
+    name: "Great Hall"
+    description: >
+      Long tables stretch across this cavernous hall. Banners of forgotten heraldry hang from the rafters.
+      A grand spiral staircase leads upward.
+    exits:
+      south: entrance_hall
+      west: study
+      east: dining_room
+      up: spiral_stair
+
+  dining_room:
+    name: "Dining Room"
+    description: >
+      A long mahogany table dominates the room. Silverware lies in neat arrangement, though untouched for decades.
+      The kitchen is through a door to the east.
+    exits:
+      west: entrance_hall
+      east: kitchen
+
+  kitchen:
+    name: "Kitchen"
+    description: >
+      The air smells faintly of smoke and mold. Pots hang from hooks above a cold fireplace.
+      A trapdoor in the floor leads down.
+    exits:
+      west: dining_room
+      down: wine_cellar
+
+  wine_cellar:
+    name: "Wine Cellar"
+    description: >
+      Rows of cobwebbed bottles line the walls. The air is damp and cool.
+      A section of wall looks strangely out of place...
+    exits:
+      up: kitchen
+      secret: hidden_tunnel
+
+  hidden_tunnel:
+    name: "Hidden Tunnel"
+    description: >
+      A narrow stone passage winds downward. The air grows colder with each step.
+      Faint sounds of dripping water echo from below.
+    exits:
+      up: wine_cellar
+      down: underground_lake
+      secret: library
+
+  underground_lake:
+    name: "Underground Lake"
+    description: >
+      A vast cavern opens before you, filled with a black, still lake.
+      A small rowboat bobs against a wooden dock.
+    exits:
+      up: hidden_tunnel
+
+  tower_top:
+    name: "Tower (Top Floor)"
+    description: >
+      At the top of the spiral stairs, a round room with tall windows overlooks the land.
+      A brass telescope points skyward.
+    exits:
+      down: great_hall
+
+  study:
+    name: "Study (Locked)"
+    description: >
+      The study is locked. A heavy oak door blocks your way.
+      You may need a key to enter.
+    exits:
+      north: library
+      east: great_hall
+
+world_exit:
+  name: "Outside World"
+  description: >
+    The world beyond stretches into fields and forests. Adventure lies elsewhere...
